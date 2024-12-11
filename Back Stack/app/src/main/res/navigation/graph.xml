@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.back_stack.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_question1Fragment2"
+            app:destination="@id/question1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question1Fragment"
+        android:name="com.example.back_stack.Question1Fragment"
+        android:label="fragment_question1"
+        tools:layout="@layout/fragment_question1" >
+        <action
+            android:id="@+id/action_question1Fragment_to_question2Fragment"
+            app:destination="@id/question2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question2Fragment"
+        android:name="com.example.back_stack.Question2Fragment"
+        android:label="fragment_question2"
+        tools:layout="@layout/fragment_question2" >
+        <argument
+            android:name="count"
+            android:defaultValue="0"
+            app:argType="float"/>
+        <action
+            android:id="@+id/action_question2Fragment_to_question3Fragment"
+            app:destination="@id/question3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/question3Fragment"
+        android:name="com.example.back_stack.Question3Fragment"
+        android:label="fragment_question3"
+        tools:layout="@layout/fragment_question3" >
+        <argument
+            android:name="count"
+            android:defaultValue="0"
+            app:argType="float"/>
+        <action
+            android:id="@+id/action_question3Fragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.back_stack.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <argument
+            android:name="count"
+            android:defaultValue="0"
+            app:argType="float"/>
+        <action
+            android:id="@+id/action_resultFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+</navigation>
